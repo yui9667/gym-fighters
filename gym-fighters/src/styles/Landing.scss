@@ -1,0 +1,113 @@
+@use './mixins' as *;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Serif Display', serif;
+  color: #545454;
+  letter-spacing: 2px;
+}
+
+header {
+  @include flexCenter;
+  margin: 0 auto;
+}
+.header-img {
+  width: 100%;
+}
+.about-section {
+  @include flexCenter;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+.about-letter {
+  color: red;
+}
+h1 {
+  padding-bottom: 20px;
+}
+
+// .about-img {
+//   width: 100%;
+//   padding: 20px 0;
+// }
+
+.class-section {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+li {
+  padding: 1rem 0;
+}
+.class-adult-img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.boxing-class-section {
+  @include flexCenter;
+  flex-direction: column;
+}
+.boxing-class-title {
+  padding: 2rem;
+}
+.staff-section {
+  @include flexCenter;
+  flex-direction: column;
+}
+.staff-img {
+  width: 100%;
+  max-width: 500px;
+  height: 450px;
+}
+.price-section {
+  @include flexCenter;
+  flex-direction: column;
+  text-align: center;
+
+  margin: 0 auto;
+}
+.price-box {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+.price-box-item {
+  border: 1px #ededed solid;
+  padding: 2rem;
+  width: 100%;
+}
+
+.map {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.access-table {
+  @include flexCenter;
+}
+.access-table-body {
+  border: 1px #ededed solid;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .price-box {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1068px) {
+  .header-img {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
