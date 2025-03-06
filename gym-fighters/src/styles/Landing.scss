@@ -30,7 +30,8 @@ header {
   max-width: 850px;
 }
 .about-letter,
-.class-letter {
+.class-letter,
+.access-letter {
   color: red;
 }
 
@@ -38,7 +39,9 @@ h1,
 h2 {
   padding-bottom: 1rem;
 }
-
+.about-description {
+  margin-bottom: 1rem;
+}
 .class-section,
 .kids-class-section,
 .kick-boxing-class-section {
@@ -96,7 +99,6 @@ li {
 .kids-class-section {
   @include flexCenter;
   flex-direction: column;
-  padding-top: 5rem;
 }
 .kids-boxing {
   @include flexCenter;
@@ -106,7 +108,6 @@ li {
 
 .kids-class-img {
   @include img;
-  padding: 2rem;
   max-width: 600px;
   background-color: $kids-container;
 }
@@ -137,7 +138,6 @@ li {
 }
 .kick-boxing-img {
   @include img;
-  padding: 2rem;
   max-width: 600px;
   background-color: $kick-boxing-container;
 }
@@ -211,11 +211,13 @@ li {
 .access-section {
   @include flexCenter;
   flex-direction: column;
+  padding: 10rem 0;
 }
 .map {
   width: 100%;
-  height: 500px;
+  height: 400px;
   padding: 20px;
+  border: 0px;
   margin: 0 auto;
 }
 
@@ -227,7 +229,7 @@ li {
   flex-direction: column;
 }
 .access-table-body {
-  padding: 1.5rem;
+  width: 100%;
 }
 .access-table-name {
   color: $primary-color;
@@ -273,6 +275,11 @@ footer {
   }
   .access {
     flex-direction: row;
+    width: 100%;
+    max-width: 1000px;
+  }
+  .map {
+    width: 50%;
   }
 }
 @media (min-width: 1068px) {

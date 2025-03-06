@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Landing.scss';
 import { motion, useScroll } from 'framer-motion';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Landing = () => {
   const { scrollYProgress } = useScroll();
   return (
@@ -16,30 +17,38 @@ const Landing = () => {
           right: 0,
           height: 10,
           originX: 0,
+          zIndex: 100,
           backgroundColor: '#e8120a',
         }}
       />
       <header>
-        <img className='header-img' src='/header.jpg' alt='ジムの建物の写真' />
+        <picture>
+          <source srcSet='/header.webp' type='/header/webp' />
+          <LazyLoadImage
+            className='header-img'
+            loading='lazy'
+            src='/header.jpg'
+            alt='ジムの建物の写真'
+          />
+        </picture>
       </header>
       <section className='about-section'>
         <p className='about-letter'>ABOUT </p>
         <h1>ジムファイターズについて</h1>
         <div className='about'>
-          {/* <img className='about-img' src='/about-gym.jpg' alt='' /> */}
-          <p>
+          <p className='about-description'>
             広島にあるジムファイターズ「ジャスティス」は、初心者からプロ志向の選手まで、幅広いニーズに応えるトレーニング環境を提供しています。私たちは、ボクシングを通じて心身の成長を促すことを目指し、個々の目標に応じたサポートを行っています。
           </p>
-          <br />
-          <p>
+
+          <p className='about-description'>
             ジム内は様々なトレーニング器具と本格的なリングを2つ完備し、快適で安全な環境を整えています。また、経験豊富なコーチ陣が常駐しており、技術指導はもちろん、フィジカル面やメンタル面でもしっかりサポートします。初心者には基礎から丁寧に教え、経験者にはさらなるスキル向上を図るための専門的なトレーニングメニューを用意しています。
           </p>
-          <br />
-          <p>
+
+          <p className='about-description'>
             私たちのジムは、ボクシングの楽しさを知ってもらうことを大切にしており、レクリエーション感覚で気軽に参加できるクラスも充実しています。仲間と共に汗を流し、楽しみながら健康を手に入れることができます。
           </p>
-          <br />
-          <p>
+
+          <p className='about-description'>
             広島でボクシングを始めてみたい方、技術を磨きたい方、ぜひ一度私たちのジムに足を運んでみてください。
           </p>
         </div>
@@ -76,7 +85,16 @@ const Landing = () => {
         >
           <h2 className='boxing-class-title'>ボクシングクラス</h2>
           <div className='boxing-adult'>
-            <img className='class-adult-img' src='/adult.jpg' alt='' />
+            <picture className='class-adult-img'>
+              <source srcSet='/adult.webp' type='/adult/webp' />
+              <LazyLoadImage
+                className='class-adult-img'
+                loading='lazy'
+                src='/adult.jpg'
+                alt='女性がボクシングしている写真'
+              />
+            </picture>
+
             <div>
               <p className='boxing-description'>
                 初心者から上級者までボクシングを楽しみたい方向けのクラスです。
@@ -100,7 +118,15 @@ const Landing = () => {
         >
           <h2 className='kids-class-title'>Kidsボクシングクラス</h2>
           <div className='kids-boxing'>
-            <img className='kids-class-img' src='/kids.jpg' alt='' />
+            <picture className='kids-class-img'>
+              <source srcSet='/kids.webp' type='/kids/webp' />
+              <LazyLoadImage
+                className='kids-class-img'
+                src='/kids.jpg'
+                alt='二人の男達がボクシングをしている写真'
+              />
+            </picture>
+
             <div>
               <p className='kids-description'>
                 小学校3年生～中学3年生までを対象としたボクシングクラスです。
@@ -132,7 +158,16 @@ const Landing = () => {
         >
           <h2 className='kick-boxing-class-title'>キックボクシングクラス</h2>
           <div className='kick-boxing'>
-            <img className='kick-boxing-img' src='/kick-boxing.jpg' alt='' />
+            <picture className='kick-boxing-img'>
+              <source srcSet='/kick-boxing.webp' type='/kick-boxing/webp' />
+              <LazyLoadImage
+                className='kick-boxing-img'
+                loading='lazy'
+                src='/kick-boxing.jpg'
+                alt='男の人がキックボクシングしている写真'
+              />
+            </picture>
+
             <div>
               <p className='kick-boxing-description'>
                 キックボクシングは1時間あたりの消費カロリーが他の運動と比べて多いため、ダイエットやボディメイク目的で始める人が多い人気のスポーツです。
@@ -166,7 +201,15 @@ const Landing = () => {
         <p className='class-letter'>STAFF</p>
         <h2>スタッフ</h2>
         <div className='staff'>
-          <img src='/staff.jpg' alt='' className='staff-img' />
+          <picture className='staff-img'>
+            <source srcSet='/staff.webp' type='/staff/webp' />
+            <LazyLoadImage
+              src='/staff.jpg'
+              loading='lazy'
+              alt='スタッフの画像'
+              className='staff-img'
+            />
+          </picture>
           <div className='staff-description'>
             <p>下村 浩司（しもむら ひろし）</p>
             <br />
@@ -220,12 +263,11 @@ const Landing = () => {
         viewport={{ once: true, amount: 0.5 }}
         className='access-section'
       >
-        <p>ACCESS</p>
+        <p className='access-letter'>ACCESS</p>
         <h2>アクセス</h2>
         <div className='access'>
           <iframe
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.4799825903424!2d132.44292327538014!3d34.41456119851282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a98908097c081%3A0x78621575f1a19a1b!2z5pel5pys44CB44CSNzMzLTA4MDIg5bqD5bO255yM5bqD5bO25biC6KW_5Yy65LiJ5rud5pys55S677yR5LiB55uu77yS4oiS77yS77ySIOa0i-mjn-Wxi-OCouODs-ODquODjeODg-ODiA!5e0!3m2!1sja!2sse!4v1741174721038!5m2!1sja!2sse'
-            style={{ border: 0 }}
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.6082707169007!2d132.41326821093546!3d34.36044650128171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a98c0c8907aa1%3A0x24d0535b10ac8b46!2z44K444Og44OV44Kh44Kk44K_44O844K677yq77y177yz77y077yp77yj77yl!5e0!3m2!1sen!2sse!4v1741273854535!5m2!1sen!2sse'
             className='map'
             allowFullScreen=''
             loading='lazy'
