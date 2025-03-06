@@ -1,8 +1,7 @@
 import React from 'react';
 import './styles/Landing.scss';
 import { motion, useScroll } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 const Landing = () => {
   const { scrollYProgress } = useScroll();
   return (
@@ -46,7 +45,13 @@ const Landing = () => {
         </div>
       </section>
       <section className='class-section'>
-        <div className='class-list-container'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className='class-list-container'
+        >
           <p className='class-letter'>CLASS </p>
           <h2>クラスメニュー</h2>
           <h3>こんな人におすすめ</h3>
@@ -60,9 +65,15 @@ const Landing = () => {
           <p className='class-description'>
             ジムが開いている時間帯であれば好きな時にトレーニングが可能ですが、初心者の方や技術の習得、仲間作りをメインにしたいという場合は、毎週開催されるクラスに参加するのもおすすめです。
           </p>
-        </div>
+        </motion.div>
 
-        <div className='boxing-class-section'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className='boxing-class-section'
+        >
           <h2 className='boxing-class-title'>ボクシングクラス</h2>
           <div className='boxing-adult'>
             <img className='class-adult-img' src='/adult.jpg' alt='' />
@@ -79,8 +90,14 @@ const Landing = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className='kids-class-section'>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className='kids-class-section'
+        >
           <h2 className='kids-class-title'>Kidsボクシングクラス</h2>
           <div className='kids-boxing'>
             <img className='kids-class-img' src='/kids.jpg' alt='' />
@@ -105,8 +122,14 @@ const Landing = () => {
               </ul>
             </div>
           </div>
-        </div>
-        <div className='kick-boxing-class-section'>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className='kick-boxing-class-section'
+        >
           <h2 className='kick-boxing-class-title'>キックボクシングクラス</h2>
           <div className='kick-boxing'>
             <img className='kick-boxing-img' src='/kick-boxing.jpg' alt='' />
@@ -131,9 +154,15 @@ const Landing = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
-      <section className='staff-section'>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className='staff-section'
+      >
         <p className='class-letter'>STAFF</p>
         <h2>スタッフ</h2>
         <div className='staff'>
@@ -150,8 +179,14 @@ const Landing = () => {
             </p>
           </div>
         </div>
-      </section>
-      <section className='price-section'>
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className='price-section'
+      >
         <p className='class-letter'>PRICE</p>
         <h2>料金</h2>
 
@@ -177,8 +212,14 @@ const Landing = () => {
           </div>
         </div>
         <h3>【入会金】10,000円</h3>
-      </section>
-      <section className='access-section'>
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className='access-section'
+      >
         <p>ACCESS</p>
         <h2>アクセス</h2>
         <div className='access'>
@@ -186,48 +227,53 @@ const Landing = () => {
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.4799825903424!2d132.44292327538014!3d34.41456119851282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a98908097c081%3A0x78621575f1a19a1b!2z5pel5pys44CB44CSNzMzLTA4MDIg5bqD5bO255yM5bqD5bO25biC6KW_5Yy65LiJ5rud5pys55S677yR5LiB55uu77yS4oiS77yS77ySIOa0i-mjn-Wxi-OCouODs-ODquODjeODg-ODiA!5e0!3m2!1sja!2sse!4v1741174721038!5m2!1sja!2sse'
             style={{ border: 0 }}
             className='map'
-            allowfullscreen=''
+            allowFullScreen=''
             loading='lazy'
-            referrerpolicy='no-referrer-when-downgrade'
+            referrerPolicy='no-referrer-when-downgrade'
           ></iframe>
-          <table className='access-table'>
-            <tbody className='access-table-body'>
-              <h3 className='access-table-name'>ジムファイターズ JUSTICE</h3>
-
-              <tr>
-                <td className='access-table-right'>住所</td>
-                <td>〒733-0802 広島市西区三滝本町1-2-22</td>
-              </tr>
-              <tr>
-                <td className='access-table-right'>営業時間</td>
-                <td> 月曜日～日曜日 10:00～21:00</td>
-              </tr>
-              <tr>
-                <td className='access-table-right'>定休日</td>
-                <td> 不定休</td>
-              </tr>
-              <tr>
-                <td className='access-table-right'>電話番号</td>
-                <td> 090-2009-5586（下村）</td>
-              </tr>
-            </tbody>
-          </table>
+          <div>
+            <h3 className='access-table-name'>ジムファイターズ JUSTICE</h3>
+            <table className='access-table'>
+              <tbody className='access-table-body'>
+                <tr>
+                  <td className='access-table-right'>住所</td>
+                  <td>〒733-0802 広島市西区三滝本町1-2-22</td>
+                </tr>
+                <tr>
+                  <td className='access-table-right'>営業時間</td>
+                  <td> 月曜日～日曜日 10:00～21:00</td>
+                </tr>
+                <tr>
+                  <td className='access-table-right'>定休日</td>
+                  <td> 不定休</td>
+                </tr>
+                <tr>
+                  <td className='access-table-right'>電話番号</td>
+                  <td> 090-2009-5586（下村）</td>
+                </tr>
+                <tr>
+                  <td className='access-table-right'>最寄駅</td>
+                  <td> 三滝駅 歩いて５分</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </section>
+      </motion.section>
       <footer>
         <p className='footer-name'>© 2025 ジムファイターズ JUSTICE</p>
         <div className='footer-sns'>
-          <div className='instagram-container'>
-            <FontAwesomeIcon
-              icon={faInstagram}
-              style={{ backgroundColor: 'red', fontSize: '20px' }}
-            />
+          <div className='instagram-icon'>
+            <a
+              href='https://www.instagram.com/gym.shimomura/'
+              className='instagram-icon'
+            >
+              <FaInstagram />
+            </a>
           </div>
-
-          <FontAwesomeIcon
-            icon={faFacebook}
-            style={{ backgroundColor: 'red', fontSize: '20px' }}
-          />
+          <div className='facebook-icon'>
+            <FaFacebook />
+          </div>
         </div>
       </footer>
     </>

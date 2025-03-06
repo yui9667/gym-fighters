@@ -1,8 +1,8 @@
 @use './mixins' as *;
 
 $boxing-container: #3c566a;
-$kids-container: #3c616a;
-$kick-boxing-container: #3c6a4e;
+$kids-container: #5e6a69;
+$kick-boxing-container: #64666e;
 $primary-color: #e8120a;
 * {
   padding: 0;
@@ -90,6 +90,7 @@ li {
 .boxing-date {
   background-color: $boxing-container;
   color: #fffdfd;
+  padding-bottom: 2rem;
 }
 /*kids*/
 .kids-class-section {
@@ -210,7 +211,6 @@ li {
 .access-section {
   @include flexCenter;
   flex-direction: column;
-  padding: 10rem 0;
 }
 .map {
   width: 100%;
@@ -253,7 +253,19 @@ footer {
   @include flexCenter;
   gap: 2rem;
   background-color: $primary-color;
+  padding-top: 0.5rem;
 }
+.instagram-icon,
+.facebook-icon {
+  background: none;
+  font-size: 25px;
+}
+.instagram-icon svg,
+.facebook-icon svg {
+  fill: #fff;
+  background-color: $primary-color;
+}
+
 @media (min-width: 768px) {
   .price-box {
     flex-direction: row;
@@ -261,11 +273,6 @@ footer {
   }
   .access {
     flex-direction: row;
-  }
-
-  .access-table {
-    width: 100%;
-    max-width: 600px;
   }
 }
 @media (min-width: 1068px) {
